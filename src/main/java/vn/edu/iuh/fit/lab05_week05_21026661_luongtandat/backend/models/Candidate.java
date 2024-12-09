@@ -21,7 +21,7 @@ import java.util.Set;
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "can_id", nullable = false)
     private Long id;
 
     @Column(name = "dob", nullable = false)

@@ -12,6 +12,10 @@ package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.services.impl;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Candidate;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.repositories.CandidateRepository;
@@ -23,7 +27,9 @@ public class CandidateServiceImpl implements CandidateServices {
     private CandidateRepository candidateRepository;
 
     @Override
-    public Candidate saveCandidate(Candidate candidate) {
+    public Candidate updateCandidate(Candidate candidate) {
         return candidateRepository.save(candidate);
+
     }
+
 }

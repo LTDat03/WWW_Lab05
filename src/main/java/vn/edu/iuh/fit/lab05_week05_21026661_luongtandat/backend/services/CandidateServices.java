@@ -11,8 +11,10 @@ package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.services;
  * @date: 11/11/2024
  */
 
+import org.springframework.data.domain.Page;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Candidate;
 
 public interface CandidateServices {
-    public Candidate saveCandidate(Candidate candidate);
+    public Candidate updateCandidate(Candidate candidate);
+
 }

@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "address_id", nullable = false)
     private Long id;
 
     @Column(name = "street", length = 150)
@@ -25,7 +25,7 @@ public class Address {
     @Column(name = "city", length = 50)
     private String city;
 
-    @Column(name = "country")
+    @Column(name = "country", nullable = false)
     private CountryCode country = CountryCode.VN;
 
     @Column(name = "number", length = 20)

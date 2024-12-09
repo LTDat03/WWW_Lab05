@@ -18,20 +18,20 @@ C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 </head>
 <body>
 <div th:switch="${candidates}">
-    <h2 th:case="null">No candidates yet!</h2>
+    <h2 th:case="null" class="text-center text-muted">No candidates yet!</h2>
     <div th:case="*">
-        <h2>Candidates</h2>
-        <table class="table table-hover">
-            <thead>
+        <h2 class="text-center mb-4">Candidates</h2>
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>dob</th>
-                <th>address</th>
-                <th>phone</th>
-                <th>email</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">dob</th>
+                <th scope="col">address</th>
+                <th scope="col">phone</th>
+                <th scope="col">email</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -42,12 +42,13 @@ C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
                 <td th:text="${candidate.address}"></td>
                 <td th:text="${candidate.phone}"></td>
                 <td th:text="${candidate.email}"></td>
-                <td><a th:href="@{/edit/{id}(id=${candidate.id})}">Edit</a></td>
-                <td><a th:href="@{/delete/{id}(id=${candidate.id})}">Delete</a></td>
+                <td><a th:href="@{candidates/show-edit-form/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Edit</a></td>
+                <td><a th:href="@{candidates/delete/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Delete</a></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+<div class="inline"><a href="candidates/show-add-form" class="btn btn-sm btn-warning">Add a new Address</a></div>
 </body>
 </html>
