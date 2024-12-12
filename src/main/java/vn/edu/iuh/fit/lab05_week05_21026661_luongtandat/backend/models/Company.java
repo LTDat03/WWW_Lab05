@@ -41,7 +41,7 @@ public class Company {
     @JoinColumn(name = "address", nullable = false)
     private Address address;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Job> jobs;
 
 }

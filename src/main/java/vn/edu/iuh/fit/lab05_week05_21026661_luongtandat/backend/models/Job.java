@@ -28,8 +28,8 @@ public class Job {
     @Column(name = "job_name", nullable = false)
     private String jobName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "comp_id", nullable = false)
     private Company company;
 
     @OneToMany(mappedBy = "job")
