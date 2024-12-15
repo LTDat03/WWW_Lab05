@@ -23,7 +23,7 @@
 <body>
 <h1 th:align="center">UPDATE CANDIDATE</h1>
 <div class="x">
-    <form action="#" th:action="@{/candidates/updateCandidate}" th:object="${candidate}" method="post">
+    <form action="#" th:action="@{/templates/candidate/updateCandidate}" th:object="${candidate}" method="post">
         <input type="hidden" th:field="${candidate.id}" />
         <div class="row mb-3">
             <label for="name" class="col-sm-1 col-form-label">Name</label>

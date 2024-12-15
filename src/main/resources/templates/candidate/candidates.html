@@ -42,8 +42,8 @@ C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
                 <td th:text="${candidate.address}"></td>
                 <td th:text="${candidate.phone}"></td>
                 <td th:text="${candidate.email}"></td>
-                <td><a th:href="@{candidates/show-edit-form/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Edit</a></td>
-                <td><a th:href="@{candidates/delete/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Delete</a></td>
+                <td><a th:href="@{/show-edit-form/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Edit</a></td>
+                <td><a th:href="@{/delete/{id}(id=${candidate.id})}" class="btn btn-sm btn-primary">Delete</a></td>
             </tr>
             </tbody>
         </table>

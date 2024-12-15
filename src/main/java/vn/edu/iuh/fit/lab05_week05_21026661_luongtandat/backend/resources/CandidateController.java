@@ -4,7 +4,7 @@
  * Copyright (c) 2024 IUH. All rights reserved.
  */
 
-package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.frontend.controllers;
+package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.resources;
 /*
  * @description:
  * @author: Luong Tan Dat
@@ -13,8 +13,6 @@ package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.frontend.controllers;
 
 import com.neovisionaries.i18n.CountryCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.BindResult;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,10 +25,7 @@ import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.repositories.Can
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.services.CandidateServices;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.services.impl.CandidateServiceImpl;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Controller
 @RequestMapping("/candidates")

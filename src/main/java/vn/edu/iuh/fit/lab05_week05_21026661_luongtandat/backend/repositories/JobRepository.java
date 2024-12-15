@@ -26,4 +26,9 @@ import java.util.List;
 
 @Repository
 public interface JobRepository extends JpaRepository<Job, Long>, JpaSpecificationExecutor<Job> {
+    @Query("SELECT COUNT(j) FROM Job j WHERE j.company.id = :companyId")
+    int countByCompanyId(Long companyId);
+
+    @Query("SELECT j FROM Job j WHERE j.company.id = :companyId")
+    Page<Job> findByCompanyId(Long companyId, Pageable pageable);
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Available</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-
+    T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous">
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-
+    C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .job-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card .card-header {
+            padding: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .job-card .card-body {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .job-card .card-body p {
+            margin-bottom: 15px;
+        }
+
+        .job-card .card-body ul {
+            padding-left: 20px;
+        }
+
+        .job-card .card-footer {
+            padding: 10px 0;
+            background-color: #f8f9fa;
+        }
+
+        .job-card .btn-outline-primary {
+            border-radius: 50px;
+            border: 2px solid #007bff;
+            color: #007bff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .job-card .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<header class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/recruitments/dashboard}">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/recruitments/availableJob}">
+                            Jobs Available
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/recruitments/manageJob}">
+                            Job Management
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center">
+                <p sec:authorize="isAuthenticated()" class="mb-0 me-3"
+                   th:text="${'Hello, ' + #authentication.name}"></p>
+                <a sec:authorize="isAuthenticated()" th:href="@{/auth/logout}" class="btn btn-light me-2">Log out</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div sec:authorize="hasAnyAuthority('COMPANY')">
+    <h1 class="mb-4">JOB</h1>
+    <div class="job">
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6 mb-4" th:each="item: ${pageJobs.content}">
+                <div class="card job-card shadow-sm border-0 rounded-lg">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0" th:text="${item.jobName}"></h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Description:</strong> <span th:text="${item.jobDesc}"></span></p>
+                        <p><strong>Required Skills:</strong>
+                        <ul class="list-styled">
+                            <li th:each="skill : ${item.jobSkills}" th:text="${skill.skill.skillName}"></li>
+                        </ul>
+                        </p>
+                        <p><strong>Company:</strong> <span th:text="${item.company.compName}"></span></p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-primary">More Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation" class="mt-4" th:if="${pageJobs.totalPages > 0}">
+        <ul class="justify-content-center">
+            <li class="page-item" th:class="${pageJobs == pageJobs.pageable} ? 'active'"
+                th:each="page : ${#numbers.sequence(0, pageJobs.totalPages - 1)}"
+            >
+                <a class="page-link" th:text="${page + 1}"
+                   th:href="@{|/recruitments/job?page=${page}&size=${pageJobs.size}|}">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

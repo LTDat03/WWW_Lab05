@@ -1,36 +1,22 @@
 /*
- * @ (#) JobController.java       1.0     12/9/2024
+ * @ (#) JobController.java       1.0     12/15/2024
  *
  * Copyright (c) 2024 IUH. All rights reserved.
  */
 
 package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.frontend.controllers;
- /*
-  * @description:
-  * @author: Luong Tan Dat
-  * @date: 12/9/2024
+/*
+ * @description:
+ * @author: Luong Tan Dat
+ * @date: 12/15/2024
  */
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Job;
-import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.repositories.JobRepository;
-
-import java.util.List;
-
-@Controller
-@RequestMapping("/")
-public class JobController {
-    @Autowired
-    private JobRepository jobRepository;
-
-    @GetMapping("")
-    public String showAllJob(Model model){
-        List<Job> jobs = jobRepository.findAll();
-        model.addAttribute("jobs", jobs);
-        return "job/job";
-    }
-}
+//
+//@Controller
+////@RequestMapping("/jobs")
+//public class JobController {
+//
+//}

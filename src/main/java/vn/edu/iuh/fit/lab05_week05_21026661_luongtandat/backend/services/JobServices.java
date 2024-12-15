@@ -15,5 +15,11 @@ import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Job;
  * @date: 12/9/2024
  */
 public interface JobServices {
+    Page<Job> findAll(int pageNo, int pageSize, String sortBy, String sortDirection);
 
+    Page<Job> searchJobs(String filter, String address, int pageNo, int pageSize);
+
+    Integer countByCompanyId(Long companyId);
+
+    Page<Job> findByCompanyId(Long companyId, int pageNo, int pageSize);
 }
