@@ -118,9 +118,9 @@
                         </p>
                         <p><strong>Company:</strong> <span th:text="${item.company.compName}"></span></p>
                     </div>
-                    <div class="card-footer text-center">
+                    <a class="card-footer text-center" th:href="@{/recruitments/job/{jobId}(jobId=${item.id})}">
                         <button class="btn btn-outline-primary">More Details</button>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

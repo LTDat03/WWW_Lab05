@@ -2,14 +2,20 @@ package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.ids;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.Hibernate;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Job;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Skill;
 
 import java.io.Serializable;
 import java.util.Objects;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Embeddable
 
 public class JobSkillId implements Serializable {
     private Job job;

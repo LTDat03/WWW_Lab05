@@ -1,10 +1,8 @@
 package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jdk.jshell.Snippet;
+import lombok.*;
 
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -16,6 +14,7 @@ import java.util.Set;
 @Table(name = "company")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

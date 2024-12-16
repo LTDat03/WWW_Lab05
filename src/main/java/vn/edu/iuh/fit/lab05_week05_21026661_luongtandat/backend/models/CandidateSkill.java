@@ -1,10 +1,7 @@
 package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.enums.SkillLevel;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.ids.CandidateSkillId;
 
@@ -15,7 +12,10 @@ import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.ids.CandidateSki
 @IdClass(CandidateSkillId.class)
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CandidateSkill {
+    @EmbeddedId
+    private CandidateSkillId id;
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "can_id", nullable = false)

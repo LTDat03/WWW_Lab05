@@ -35,4 +35,7 @@ public class Skill {
     @OneToMany(mappedBy = "skill")
     private List<JobSkill> jobSkills;
 
+    public Skill(Long skillId) {
+        this.id = skillId;
+    }
 }

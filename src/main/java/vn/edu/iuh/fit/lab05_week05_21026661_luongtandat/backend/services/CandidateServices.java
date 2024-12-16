@@ -13,8 +13,14 @@ package vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.services;
 
 import org.springframework.data.domain.Page;
 import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.Candidate;
+import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.models.CandidateSkill;
+
+import java.util.List;
 
 public interface CandidateServices {
     public Candidate updateCandidate(Candidate candidate);
 
+    public Candidate getCandidate(Long candidateId);
+
+    List<CandidateSkill> getSkillByCandidateId(Long candidateId);
 }
