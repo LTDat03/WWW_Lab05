@@ -12,10 +12,8 @@ import vn.edu.iuh.fit.lab05_week05_21026661_luongtandat.backend.ids.CandidateSki
 @IdClass(CandidateSkillId.class)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+
 public class CandidateSkill {
-    @EmbeddedId
-    private CandidateSkillId id;
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "can_id", nullable = false)

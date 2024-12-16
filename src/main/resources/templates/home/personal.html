@@ -89,18 +89,6 @@
                 </div>
             </div>
 
-            <!-- Skills Section -->
-            <div class="row mb-3">
-                <label for="skills" class="col-sm-1 col-form-label">Skills</label>
-                <div class="col-sm-10">
-                    <select class="form-select" multiple th:field="*{candidateSkills}">
-                        <option th:each="skill : ${candidate.candidateSkills}" th:value="${skill}" th:text="${skill.skill.name}"></option>
-                    </select>
-                </div>
-            </div>
-
-            <br/>
-
             <!-- Submit Button -->
             <div class="d-grid gap-2 col-3 mx-auto">
                 <button class="btn btn-primary" type="submit">Update Candidate</button>

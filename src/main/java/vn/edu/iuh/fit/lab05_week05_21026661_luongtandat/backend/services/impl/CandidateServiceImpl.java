@@ -108,7 +108,6 @@ public class CandidateServiceImpl implements CandidateServices {
 
     ;
 
-
     @Override
     public Candidate getCandidate(Long candidateId) {
         return candidateRepository.findById(candidateId).orElse(null);
