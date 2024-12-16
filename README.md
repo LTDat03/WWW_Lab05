@@ -10,48 +10,50 @@
 - username : diana.lee
 - password : 123456
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/login-company.png)
 
 ### Xem so luong cong viec 
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/dashboard.png)
 
 ### Xem danh sach cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/available.png)
 
 ### Xem chi tiet cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/more-details-job.png)
 
 ### Quan ly cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/manage-job.png)
 
 ### Them cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/addJob.png)
 
 ### Sua cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/update-job.png)
 
 ### Dang Nhap voi vai tro CANDIDATE
 - username : john.doe
 - password : 123456
 
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/login-candidate.png)
+
 ### Xem danh sach cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/job-available.png)
 
 ### Xem chi tiet cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/more-details-job.png)
 
 ### Tim kiem cong viec
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/search-job.png)
 
 ### Cap nhat thong tin ca nhan
 
-![image] ()
+![image](https://github.com/LTDat03/WWW_Lab05/blob/main/src/main/resources/static/info-candidate.png)
